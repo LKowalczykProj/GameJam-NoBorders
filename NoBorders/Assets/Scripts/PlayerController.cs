@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 	private Animator animator => GetComponent<Animator>();
 
 	// Movement
+	public bool canMove = true;
 	private bool right = true;
 
 	// Jumping
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
 	public void Move(float move, bool jump, bool dash)
 	{
+		if (!canMove) return;
 		if (dash && canDash && !isWallSliding) {
 			// Dashing
 			StartCoroutine(DashCooldown());
