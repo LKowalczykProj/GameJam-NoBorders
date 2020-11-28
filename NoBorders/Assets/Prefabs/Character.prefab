@@ -84,7 +84,7 @@ MonoBehaviour:
   wallCheck: {fileID: 4986330650710208}
   jumpForce: 600
   groundCheck: {fileID: 4291727345091452}
-  m_DashForce: 45
+  dashForce: 45
   dashCooldown: 0.5
 --- !u!114 &114435281327171648
 MonoBehaviour:
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8644d33345e77614ba3ace9c18398d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 40
+  runSpeed: 30
 --- !u!212 &212971026275759962
 SpriteRenderer:
   m_ObjectHideFlags: 0

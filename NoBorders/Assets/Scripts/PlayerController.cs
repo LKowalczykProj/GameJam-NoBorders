@@ -22,16 +22,16 @@ public class PlayerController : MonoBehaviour
 	private bool doubleJumpAvailable = true;
 
 	// Dash
-	public float m_DashForce = 25f;
+	public float dashForce = 25f;
 	public float dashCooldown = 0.5f;
 	private bool canDash = true;
 	private bool isDashing = false;
 	
 	// Wall sliding
-	private bool isWall = false; //If there is a wall in front of the player
-	private bool isWallSliding = false; //If player is sliding in a wall
-	private bool oldWallSlidding = false; //If player is sliding in a wall in the previous frame
-	private bool canCheck = false; //For check if player is wallsliding
+	private bool isWall = false;
+	private bool isWallSliding = false;
+	private bool oldWallSlidding = false;
+	private bool canCheck = false;
 
 	private void FixedUpdate()
 	{
@@ -43,46 +43,48 @@ public class PlayerController : MonoBehaviour
 			grounded = true;
 			doubleJumpAvailable = true;
 		}
-
 		animator.SetBool("IsJumping", Math.Abs(body.velocity.y) > 0.5 && !grounded);
-		// isWall = false;
-		// if (!grounded)
-		// {
-		// 	Collider2D[] collidersWall = Physics2D.OverlapCircleAll(wallCheck.position, groundRadius);
-		// 	for (int i = 0; i < collidersWall.Length; i++)
-		// 	{
-		// 		isDashing = false;
-		// 		isWall = true;
-		// 	}
-		// }
+		
+		isWall = false;
+		if (!grounded) {
+			Collider2D[] collidersWall = Physics2D.OverlapCircleAll(wallCheck.position, groundRadius);
+			if (collidersWall.Length > 0) {
+				isDashing = false;
+				isWall = true;
+			}
+		}
 	}
 
 
 	public void Move(float move, bool jump, bool dash)
 	{
-		if (dash && canDash && !isWallSliding)
-		{
+		if (dash && canDash && !isWallSliding) {
+			// Dashing
 			StartCoroutine(DashCooldown());
 		}
 
 		if (isDashing) {
-			body.velocity = new Vector2(transform.localScale.x * m_DashForce, 0);
+			body.velocity = new Vector2(transform.localScale.x * dashForce, 0);
 		} else {
 			body.velocity = new Vector2(move*10f, body.velocity.y);
 		}
 
 
 		if (!isWallSliding) {
+			// Player direction
 			if ((move > 0 && !right && !isWallSliding) || (move < 0 && right)) {
 				Flip();
 			}
 		}
 		
 		if (grounded && jump) {
+			// Jump
 			grounded = false;
+			body.velocity = new Vector2(body.velocity.x, 0);
 			body.AddForce(new Vector2(0f, jumpForce));
 			animator.SetBool("IsJumping", true);
 		} else if (!grounded && jump && doubleJumpAvailable && !isWallSliding) {
+			// Double
 			doubleJumpAvailable = false;
 			body.velocity = new Vector2(body.velocity.x, 0);
 			body.AddForce(new Vector2(0f, jumpForce));
@@ -134,7 +136,8 @@ public class PlayerController : MonoBehaviour
 		// 		doubleJumpAvailable = true;
 		// 		StartCoroutine(DashCooldown());
 		// 	}
-		// } else if (isWallSliding && !isWall && canCheck) {
+		// } 
+		// else if (isWallSliding && !isWall && canCheck) {
 		// 	isWallSliding = false;
 		// 	animator.SetBool("IsWallSliding", false);
 		// 	oldWallSlidding = false;
