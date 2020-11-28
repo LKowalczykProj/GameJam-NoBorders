@@ -1,19 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class KillZone : MonoBehaviour
 {
+    Fade fade => GameObject.Find("Fade").GetComponent<Fade>();
+    GameObject player => GameObject.FindGameObjectWithTag("Player");
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
-        {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        if (col.gameObject.tag == "Player") {
+            fade.FadeOut();
+            StartCoroutine(GoToSpawn());
         }
-        else
-        {
-            Destroy(col.gameObject);
-        }
+    }
+
+    
+    IEnumerator GoToSpawn() {
+		yield return new WaitForSeconds(1f);
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }
