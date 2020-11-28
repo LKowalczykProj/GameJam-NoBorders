@@ -167,7 +167,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7748691, y: 1}
+    m_SensorSize: {x: 1.7857143, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 938149128}
   - component: {fileID: 938149127}
   m_Layer: 0
-  m_Name: Noga_Adama
+  m_Name: adams_leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +690,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a572c4d16d631eb40872ab4d34058b46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88e4a6a2419fa3c4eb3e0b7b022b5078, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1019228003}
   - component: {fileID: 1019228002}
   m_Layer: 0
-  m_Name: "Pier\u015B_Adama"
+  m_Name: adams_breast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +818,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 310e0bd05d9a4a747856b5db564c3546, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfa3f08b84e24db4f9bd2eaf6e01662a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 1266279135}
   - component: {fileID: 1266279134}
   m_Layer: 0
-  m_Name: "R\u0119ka_Adama"
+  m_Name: adams_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,7 +936,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 9.82, y: 3.88}
-    newSize: {x: 9.82, y: 3.88}
+    newSize: {x: 5.15, y: 2.07}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1140,12 +1140,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ef7852553cc7bb64b9d71cbfaf0abb00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b8938918f43c5d4f85c3e4e079c0515, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.82, y: 3.88}
+  m_Size: {x: 5.15, y: 2.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1221,7 +1221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e2647aa2e7fadb46828f4f1f0a02299, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6dfc715578c0bfc41aa957c4ea9b50d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1372,7 +1372,7 @@ GameObject:
   - component: {fileID: 1738249770}
   - component: {fileID: 1738249769}
   m_Layer: 0
-  m_Name: "R\u0119ka Boga"
+  m_Name: gods_arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1651,7 +1651,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d823ff1c5595bfc4fad21c63cf19eb18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 736ae85e3758ffa4c99c40d0e187f6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

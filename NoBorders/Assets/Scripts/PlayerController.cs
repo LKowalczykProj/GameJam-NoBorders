@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 	// Jumping
 	public float jumpForce = 400f;							
 	public Transform groundCheck;
-	const float groundRadius = .2f;
+	const float groundRadius = .01f;
 	private bool grounded;
 	private bool doubleJumpAvailable = true;
 
@@ -28,10 +28,9 @@ public class PlayerController : MonoBehaviour
 	private bool isDashing = false;
 	
 	// Wall sliding
+	public float wallSlidingSpeed = 1f;
 	private bool isWall = false;
 	private bool isWallSliding = false;
-	private bool oldWallSlidding = false;
-	private bool canCheck = false;
 
 	private void FixedUpdate()
 	{
@@ -89,61 +88,38 @@ public class PlayerController : MonoBehaviour
 			body.velocity = new Vector2(body.velocity.x, 0);
 			body.AddForce(new Vector2(0f, jumpForce));
 			animator.SetBool("IsJumping", true);
+		} else if (isWall && !grounded) {
+			if (!isWallSliding && body.velocity.y < 0) {
+				isWallSliding = true;
+				wallCheck.localPosition = new Vector3(-wallCheck.localPosition.x, wallCheck.localPosition.y, 0);
+				Flip();
+				doubleJumpAvailable = true;
+				animator.SetBool("IsWallSliding", true);
+			}
+			
+			if (isWallSliding) {
+				if (move * transform.localScale.x > 0.1f) {
+					animator.SetBool("IsWallSliding", false);
+					isWallSliding = false;
+				} else {
+					body.velocity = new Vector2(-transform.localScale.x * 2, -wallSlidingSpeed);
+				}
+			}
+
+			if (jump && isWallSliding) {
+				animator.SetBool("IsJumping", true);
+				body.velocity = new Vector2(0f, 0f);
+				body.AddForce(new Vector2(transform.localScale.x * jumpForce * 1.2f, jumpForce));
+				doubleJumpAvailable = true;
+				isWallSliding = false;
+				animator.SetBool("IsWallSliding", false);
+				wallCheck.localPosition = new Vector3(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, 0);
+			}
+		} else {
+			isWallSliding = false;
+			animator.SetBool("IsWallSliding", false);
+			wallCheck.localPosition = new Vector3(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, 0);
 		}
-		// else if (isWall && !grounded) {
-		// 	if (!oldWallSlidding && body.velocity.y < 0 || isDashing)
-		// 	{
-		// 		isWallSliding = true;
-		// 		wallCheck.localPosition = new Vector3(-wallCheck.localPosition.x, wallCheck.localPosition.y, 0);
-		// 		Flip();
-		// 		StartCoroutine(WaitToCheck(0.1f));
-		// 		doubleJumpAvailable = true;
-		// 		animator.SetBool("IsWallSliding", true);
-		// 	}
-		// 	isDashing = false;
-
-		// 	if (isWallSliding)
-		// 	{
-		// 		if (move * transform.localScale.x > 0.1f)
-		// 		{
-		// 			StartCoroutine(WaitToEndSliding());
-		// 		}
-		// 		else 
-		// 		{
-		// 			oldWallSlidding = true;
-		// 			body.velocity = new Vector2(-transform.localScale.x * 2, -5);
-		// 		}
-		// 	}
-
-		// 	if (jump && isWallSliding)
-		// 	{
-		// 		animator.SetBool("IsJumping", true);
-		// 		animator.SetBool("JumpUp", true); 
-		// 		body.velocity = new Vector2(0f, 0f);
-		// 		body.AddForce(new Vector2(transform.localScale.x * jumpForce *1.2f, jumpForce));
-		// 		doubleJumpAvailable = true;
-		// 		isWallSliding = false;
-		// 		animator.SetBool("IsWallSliding", false);
-		// 		oldWallSlidding = false;
-		// 		wallCheck.localPosition = new Vector3(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, 0);
-		// 	}
-		// 	else if (dash && canDash)
-		// 	{
-		// 		isWallSliding = false;
-		// 		animator.SetBool("IsWallSliding", false);
-		// 		oldWallSlidding = false;
-		// 		wallCheck.localPosition = new Vector3(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, 0);
-		// 		doubleJumpAvailable = true;
-		// 		StartCoroutine(DashCooldown());
-		// 	}
-		// } 
-		// else if (isWallSliding && !isWall && canCheck) {
-		// 	isWallSliding = false;
-		// 	animator.SetBool("IsWallSliding", false);
-		// 	oldWallSlidding = false;
-		// 	wallCheck.localPosition = new Vector3(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, 0);
-		// 	doubleJumpAvailable = true;
-		// }
 	}
 
 	private void Flip()
@@ -165,14 +141,4 @@ public class PlayerController : MonoBehaviour
 		yield return new WaitForSeconds(dashCooldown);
 		canDash = true;
 	}
-
-	// IEnumerator WaitToEndSliding()
-	// {
-	// 	yield return new WaitForSeconds(0.1f);
-	// 	doubleJumpAvailable = true;
-	// 	isWallSliding = false;
-	// 	animator.SetBool("IsWallSliding", false);
-	// 	oldWallSlidding = false;
-	// 	wallCheck.localPosition = new Vector3(Mathf.Abs(wallCheck.localPosition.x), wallCheck.localPosition.y, 0);
-	// }
 }
