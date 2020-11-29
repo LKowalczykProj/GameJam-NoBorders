@@ -53,8 +53,6 @@ public class PlayerController : MonoBehaviour
 				isWall = true;
 			}
 		}		
-		Debug.Log(animator.GetBool("IsJumping"));
-
 	}
 
 
