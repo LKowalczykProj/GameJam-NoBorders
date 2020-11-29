@@ -72,6 +72,8 @@ public class PlayerController : MonoBehaviour
 			body.velocity = new Vector2(move*10f, body.velocity.y);
 		}
 
+		if (body.velocity.y < -10) body.velocity = new Vector2(body.velocity.x, -10);
+
 
 		if (!isWallSliding) {
 			// Player direction

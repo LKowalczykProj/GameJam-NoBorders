@@ -1282,6 +1282,80 @@ PolygonCollider2D:
       - {x: -0.099999994, y: -0.69}
       - {x: 0.01, y: -0.66999996}
       - {x: 0.21, y: -0.59}
+--- !u!1001 &1261703930
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -85.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860076, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 1554165192}
+    - target: {fileID: 6324213142000860079, guid: 6b1918984ad000d44a3d5541672fc38a,
+        type: 3}
+      propertyPath: m_Name
+      value: EnableColliderTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b1918984ad000d44a3d5541672fc38a, type: 3}
 --- !u!4 &1437067654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5236384135908326858, guid: 50936cccdb69523458c1b42052ebafff,
@@ -1466,7 +1540,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554165189}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1788,6 +1862,80 @@ PolygonCollider2D:
       - {x: -0.17, y: -0.72999996}
       - {x: 0, y: -0.69}
       - {x: 0.12, y: -0.5}
+--- !u!1001 &1799662351
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -6868735077264514022, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 1554165192}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -85.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860074, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324213142000860079, guid: c02c3e53ae5e32649bebc2588c368bba,
+        type: 3}
+      propertyPath: m_Name
+      value: DisableColliderTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c02c3e53ae5e32649bebc2588c368bba, type: 3}
 --- !u!1 &1799685771
 GameObject:
   m_ObjectHideFlags: 0
