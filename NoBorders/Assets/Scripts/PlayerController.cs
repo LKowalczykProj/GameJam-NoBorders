@@ -52,7 +52,9 @@ public class PlayerController : MonoBehaviour
 				isDashing = false;
 				isWall = true;
 			}
-		}
+		}		
+		Debug.Log(animator.GetBool("IsJumping"));
+
 	}
 
 
